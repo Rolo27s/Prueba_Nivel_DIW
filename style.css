@@ -1,0 +1,296 @@
+/* --- OVERALL --- */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    scroll-behavior: smooth;
+}
+
+:root {
+    --paddingNav: 1rem;
+}
+
+body {
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #ddd;
+    height: 100vh;
+}
+
+.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+.dark-mode header {
+background-color: #333;
+}
+
+.dark-mode button {
+background-color: rgba(204, 204, 204, 0.2);
+color: #eee;
+}
+
+img.theme {
+    width: 30px;
+}
+
+a {
+    color: rgb(151, 230, 151);
+    background-color: rgba(43, 107, 43, 0.5);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(122, 235, 122);
+    background-color: rgb(14, 99, 14);
+    text-decoration: underline;
+}
+
+/* --- HEADER --- */
+
+header {
+    display: flex;
+    flex-direction: column;
+    grid-template-columns: 1fr auto;
+    justify-items: center;
+    justify-content: space-between;
+    background-image: url(assets/banner.png);
+    filter: brightness(0.80);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    gap: 0.5rem;
+    color: #111;
+    padding: 0.5rem;
+    transition: filter .3s ease;
+}
+
+header:hover {
+    filter: brightness(1);
+}
+
+.header-flex-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-h1 {
+    color: #eee;
+    background-color: rgba(34, 34, 34, 0.15);
+    align-self: center;
+    padding: 0.5rem;
+}
+
+.header-p, .header-span {
+    display: inline-block;
+    background-color: rgba(90, 10, 10, 0.05);
+    color: #eee;
+    font-style: oblique;
+}
+
+button {
+    background-color: rgba(0, 123, 255, 0.2);
+    color: #eee;
+    border: none;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+    transition: filter 0.5s ease;
+}
+
+button:hover {
+    filter: brightness(0.8);
+}
+
+/* --- MAIN --- */
+main {
+    padding: 0 0.5rem;
+}
+
+nav {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    border-top: 0.2rem solid #444;
+    border-bottom: 0.2rem solid #444;
+}
+
+.nav-flex-container {
+    display: flex;
+    position: relative;
+    z-index: 40;
+    justify-content: start;
+    list-style-type: none;
+
+}
+
+.nav-flex-container li:last-child {
+    justify-content: end;
+}
+
+.nav-flex-container li{
+    padding: var(--paddingNav);
+}
+
+.nav-flex-container li a{
+    background-color: #222;
+    padding: var(--paddingNav);
+    transition: color .3s ease;
+}
+
+.nav-flex-container li a:hover{
+    color: rgb(217, 255, 0);
+}
+
+h2.grito-de-guerra {
+    padding: 1rem;
+    font-family: 'Pathway Gothic One', 'Arial Narrow', Arial, sans-serif;
+    font-size: 3rem;
+}
+
+#inicio .swap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section {
+    padding-top: 3rem;
+}
+
+#inicio .texto-1{
+    margin-left: 2rem;
+}
+
+#inicio .texto-1::first-letter {
+    font-size: 2rem;
+    font-weight: 600;
+    /* Me gustaría aquí implementar el efecto de que la E se metiera hacia abajo en el texto y hacer la letra un poco más grande. Tipo libros antiguos */
+}
+
+.inicio-objetivos {
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.inicio-objetivos-ol {
+    margin-left: 3rem;
+}
+
+.inicio-objetivos-ol li {
+    margin: 0.5rem 0rem;
+}
+
+/* --- FOOTER --- */
+footer {
+    margin-top: 2rem;
+    background-color: #222;
+    color: #ddd;
+    padding: 1rem;
+    padding-bottom: 4rem;
+}
+
+footer img {
+    width: 100%;
+}
+
+.flex-container-footer{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.grid-container-patrocinadores {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 0.25rem;
+    transition: opacity .3s ease;
+}
+
+.texto-patrocinadores {
+    grid-column: 1/5;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.grid-container-patrocinadores img, .grid-container-colaboradores img  {
+    height: 4rem;
+    object-fit: contain;
+}
+
+.grid-container-colaboradores {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 0.25rem;
+    transition: opacity .3s ease;
+}
+
+.texto-colaboradores {
+    grid-column: 1/4;
+    text-align: end;
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.grid-container-colaboradores:hover, .grid-container-patrocinadores:hover {
+    opacity: 0.7;
+}
+
+.en-desarrollo{
+    color: red;
+    font-size: 3rem;
+    font-weight: 600;
+    text-shadow: 3px 3px 5px #222;
+}
+
+.grid-container-galeria{
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-container-galeria img {
+    width: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width: 860px) {
+  .flex-container-footer{
+    flex-direction: column;
+  }
+
+  .texto-colaboradores {
+    margin-top: 3rem;
+    text-align: start;
+  }
+
+  .grid-container-galeria{
+    grid-template-columns: 1fr;
+  }
+
+  .nav-flex-container {
+    flex-direction: column;
+  }
+
+  :root {
+    --paddingNav: .25rem;
+    }
+
+    .nav-flex-container {
+        margin-left: 2rem;
+    }
+
+}
